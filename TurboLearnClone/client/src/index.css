@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(252, 100%, 98%);
+  --foreground: hsl(224, 25%, 7%);
+  --card: hsl(252, 60%, 97%);
+  --card-foreground: hsl(224, 25%, 7%);
+  --popover: hsl(252, 100%, 98%);
+  --popover-foreground: hsl(224, 25%, 7%);
+  --primary: hsl(336, 100%, 71%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(270, 60%, 75%);
+  --secondary-foreground: hsl(224, 25%, 7%);
+  --muted: hsl(252, 20%, 90%);
+  --muted-foreground: hsl(224, 15%, 45%);
+  --accent: hsl(180, 58%, 65%);
+  --accent-foreground: hsl(224, 25%, 7%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(252, 30%, 91%);
+  --input: hsl(252, 40%, 96%);
+  --ring: hsl(336, 100%, 71%);
+  --chart-1: hsl(336, 100%, 71%);
+  --chart-2: hsl(270, 60%, 75%);
+  --chart-3: hsl(180, 58%, 65%);
+  --chart-4: hsl(50, 100%, 65%);
+  --chart-5: hsl(15, 85%, 75%);
+  --sidebar: hsl(252, 60%, 97%);
+  --sidebar-foreground: hsl(224, 25%, 7%);
+  --sidebar-primary: hsl(336, 100%, 71%);
+  --sidebar-primary-foreground: hsl(0, 0%, 100%);
+  --sidebar-accent: hsl(180, 58%, 65%);
+  --sidebar-accent-foreground: hsl(224, 25%, 7%);
+  --sidebar-border: hsl(252, 30%, 91%);
+  --sidebar-ring: hsl(336, 100%, 71%);
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Poppins', sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: Menlo, monospace;
+  --radius: 1.3rem;
+  
+  /* Brainzy Colors */
+  --brainzy-pink: hsl(336, 100%, 71%);
+  --brainzy-purple: hsl(270, 60%, 75%);
+  --brainzy-mint: hsl(180, 58%, 65%);
+  --brainzy-yellow: hsl(50, 100%, 65%);
+  --brainzy-coral: hsl(15, 85%, 75%);
+  --brainzy-lavender: hsl(270, 60%, 80%);
+  --brainzy-light: hsl(336, 100%, 96%);
+  --brainzy-bg: hsl(252, 100%, 98%);
+}
+
+.dark {
+  --background: hsl(224, 25%, 7%);
+  --foreground: hsl(252, 100%, 95%);
+  --card: hsl(224, 25%, 10%);
+  --card-foreground: hsl(252, 100%, 95%);
+  --popover: hsl(224, 25%, 7%);
+  --popover-foreground: hsl(252, 100%, 95%);
+  --primary: hsl(336, 100%, 71%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(270, 60%, 75%);
+  --secondary-foreground: hsl(224, 25%, 7%);
+  --muted: hsl(224, 20%, 15%);
+  --muted-foreground: hsl(252, 15%, 55%);
+  --accent: hsl(180, 58%, 65%);
+  --accent-foreground: hsl(224, 25%, 7%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(224, 25%, 15%);
+  --input: hsl(224, 25%, 12%);
+  --ring: hsl(336, 100%, 71%);
+  --sidebar: hsl(224, 25%, 10%);
+  --sidebar-foreground: hsl(252, 100%, 95%);
+  --sidebar-primary: hsl(336, 100%, 71%);
+  --sidebar-primary-foreground: hsl(0, 0%, 100%);
+  --sidebar-accent: hsl(180, 58%, 65%);
+  --sidebar-accent-foreground: hsl(224, 25%, 7%);
+  --sidebar-border: hsl(224, 25%, 15%);
+  --sidebar-ring: hsl(336, 100%, 71%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    background: linear-gradient(135deg, var(--brainzy-light) 0%, var(--brainzy-bg) 100%);
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  .gradient-bg {
+    background: linear-gradient(135deg, var(--brainzy-light) 0%, var(--brainzy-bg) 100%);
+  }
+
+  .card-hover {
+    transition: all 0.3s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px hsl(var(--brainzy-pink) / 0.15);
+  }
+
+  .tab-btn {
+    transition: all 0.3s ease;
+  }
+
+  .tab-btn.active {
+    background: linear-gradient(45deg, var(--brainzy-pink), var(--brainzy-purple));
+    color: white;
+    box-shadow: 0 4px 15px hsl(var(--brainzy-pink) / 0.3);
+  }
+
+  .tab-btn:not(.active) {
+    color: hsl(var(--muted-foreground));
+  }
+
+  .tab-btn:not(.active):hover {
+    color: hsl(var(--foreground));
+    background: hsl(var(--accent) / 0.1);
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-bounce-gentle {
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { 
+      transform: translateY(0px);
+    }
+    50% { 
+      transform: translateY(-10px);
+    }
+  }
+
+  .bg-brainzy-pink {
+    background-color: var(--brainzy-pink);
+  }
+
+  .bg-brainzy-purple {
+    background-color: var(--brainzy-purple);
+  }
+
+  .bg-brainzy-mint {
+    background-color: var(--brainzy-mint);
+  }
+
+  .bg-brainzy-yellow {
+    background-color: var(--brainzy-yellow);
+  }
+
+  .bg-brainzy-coral {
+    background-color: var(--brainzy-coral);
+  }
+
+  .bg-brainzy-lavender {
+    background-color: var(--brainzy-lavender);
+  }
+
+  .bg-brainzy-light {
+    background-color: var(--brainzy-light);
+  }
+
+  .text-brainzy-pink {
+    color: var(--brainzy-pink);
+  }
+
+  .text-brainzy-purple {
+    color: var(--brainzy-purple);
+  }
+
+  .text-brainzy-mint {
+    color: var(--brainzy-mint);
+  }
+
+  .text-brainzy-yellow {
+    color: var(--brainzy-yellow);
+  }
+
+  .text-brainzy-coral {
+    color: var(--brainzy-coral);
+  }
+
+  .text-brainzy-lavender {
+    color: var(--brainzy-lavender);
+  }
+
+  .border-brainzy-pink {
+    border-color: var(--brainzy-pink);
+  }
+
+  .border-brainzy-purple {
+    border-color: var(--brainzy-purple);
+  }
+
+  .border-brainzy-mint {
+    border-color: var(--brainzy-mint);
+  }
+}
